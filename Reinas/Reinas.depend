@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1601311067 source:c:\users\federico\documents\unicen\algoritmos ii\laboratorio\reinas\reinas.cpp
+	"Reinas.h"
+	<cmath>
+
+1601310685 c:\users\federico\documents\unicen\algoritmos ii\laboratorio\reinas\reinas.h
+
+1633107130 source:c:\users\federico\documents\unicen\algoritmos ii\laboratorio\reinas\main.cpp
+	<iostream>
+	"ReinasExtendido.h"
+
+1633105298 c:\users\federico\documents\unicen\algoritmos ii\laboratorio\reinas\include\reinas.h
+
+1633105305 source:c:\users\federico\documents\unicen\algoritmos ii\laboratorio\reinas\src\reinas.cpp
+	"Reinas.h"
+	<cmath>
+
+1601660366 source:c:\users\federico\documents\unicen\algoritmos ii\laboratorio\reinas\src\reinasextendido.cpp
+	"ReinasExtendido.h"
+	<cmath>
+
+1633107049 c:\users\federico\documents\unicen\algoritmos ii\laboratorio\reinas\include\reinasextendido.h
+	<vector>
+
