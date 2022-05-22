@@ -3,17 +3,31 @@
 
 using namespace std;
 
+bool poda(vector<int> solucion, int indice_tarea){
+	vector<int>::const_iterator it = solucion.begin();
+	for(int i = 0; solucion.at(i) != 0; i++){
+        if(*it == indice_tarea)
+			return true;
+		it++;
+	}
+	return false;
+}
+
 void backTracking(vector<vector<int>> tablero,int nro_persona, Solucion & Actual, Solucion & solucion){
 	if (nro_persona == tablero.size()){
 		if(Actual.costo < solucion.costo)
 			solucion = Actual;
 	}else{
 		for(int indice_tarea = 0; indice_tarea < tablero.at(nro_persona).size(); indice_tarea++){
-			Actual.solucion[nro_persona] = indice_tarea;
-			Actual.costo += tablero.at(nro_persona).at(indice_tarea);
-			backTracking(tablero, ++nro_persona, Actual, solucion);
-			nro_persona--;
-			Actual.costo -= tablero.at(nro_persona).at(indice_tarea);
+			if(!poda(Actual.solucion, indice_tarea)){
+				Actual.solucion[nro_persona] = indice_tarea;
+				Actual.costo += tablero.at(nro_persona).at(indice_tarea);
+				backTracking(tablero, ++nro_persona, Actual, solucion);
+				nro_persona--;
+				Actual.costo -= tablero.at(nro_persona).at(indice_tarea);
+				Actual.solucion[nro_persona] = 0;
+			}
+
 		}
 	}
 }
