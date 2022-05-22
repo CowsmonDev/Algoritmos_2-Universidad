@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1653243751 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\backtracking-universidad\asignacion tareas\src\include\asignacion_tareas.cpp
+	"headers/asignacion_tareas.h"
+	<iostream>
+
+1653237965 c:\users\agust\onedrive\escuela\ayda2\laboratorio\backtracking-universidad\asignacion tareas\src\include\headers\asignacion_tareas.h
+	<vector>
+
+1653238188 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\backtracking-universidad\asignacion tareas\src\main.cpp
+	<iostream>
+	"include/headers/asignacion_tareas.h"
+
