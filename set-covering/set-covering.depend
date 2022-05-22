@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1653252149 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\backtracking-universidad\set-covering\src\include\set-covering.cpp
+	<iostream>
+	"headers/set-covering.h"
+
+1653251408 c:\users\agust\onedrive\escuela\ayda2\laboratorio\backtracking-universidad\set-covering\src\include\headers\set-covering.h
+	<set>
+	<vector>
+
+1653252128 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\backtracking-universidad\set-covering\src\main.cpp
+	<iostream>
+	"include/headers/set-covering.h"
+
