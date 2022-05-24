@@ -14,39 +14,20 @@ bool poda(vector<vector<bool>> visitado, pair<int,int> siguiente, bool sol){
 	return true;
 }
 
-bool backTracking(list<pair<int,int>> & solucion, pair<int,int> origen, Visitados visitados){
+bool backTracking(list<pair<int,int>> & solucion,vector<pair<int,int>> & movimientos, pair<int,int> origen, Visitados visitados){
 	bool sol = false;
 	if(solucion.empty() || (origen != solucion.front())){
-		pair<int,int> siguiente = origen;
+		pair<int,int> siguiente;
 		solucion.push_back(origen);
 
-		siguiente.first++;
-		if(!poda(visitados.visitado, siguiente, sol)){
-			visitados.modificarVisitado(siguiente.first,siguiente.second, true, 1);
-			sol = backTracking(solucion,siguiente, visitados);
-			visitados.modificarVisitado(siguiente.first,siguiente.second, false, -1);
-		}
-
-		siguiente.first -= 2;
-		if(!poda(visitados.visitado, siguiente, sol)){
-			visitados.modificarVisitado(siguiente.first,siguiente.second, true, 1);
-			sol = backTracking(solucion,siguiente, visitados);
-			visitados.modificarVisitado(siguiente.first,siguiente.second, false, -1);
-		}
-
-		siguiente.first++;
-		siguiente.second++;
-		if(!poda(visitados.visitado, siguiente, sol)){
-			visitados.modificarVisitado(siguiente.first,siguiente.second, true, 1);
-			sol = backTracking(solucion,siguiente, visitados);
-			visitados.modificarVisitado(siguiente.first,siguiente.second, false, -1);
-		}
-
-		siguiente.second -= 2;
-		if(!poda(visitados.visitado, siguiente, sol)){
-			visitados.modificarVisitado(siguiente.first,siguiente.second, true, 1);
-			sol = backTracking(solucion,siguiente, visitados);
-			visitados.modificarVisitado(siguiente.first,siguiente.second, false, -1);
+		for(vector<pair<int,int>>::const_iterator it = movimientos.begin(); it != movimientos.end(); it++){
+			siguiente.first = (it->first + origen.first);
+			siguiente.second = (it->second + origen.second);
+			if(!poda(visitados.visitado, siguiente, sol)){
+				visitados.modificarVisitado(siguiente.first,siguiente.second, true, 1);
+				sol = backTracking(solucion,movimientos, siguiente, visitados);
+				visitados.modificarVisitado(siguiente.first,siguiente.second, false, -1);
+			}
 		}
 
 		if(!sol)
@@ -56,17 +37,6 @@ bool backTracking(list<pair<int,int>> & solucion, pair<int,int> origen, Visitado
 
 	}else return (solucion.size() != (visitados.cantidad * visitados.cantidad));
 }
-
-bool mover(list<pair<int,int>> & solucion, pair<int,int> origen, pair<int,int> siguiente, Visitados visitados, bool & sol){
-		if(!((visitados.visitado.at(siguiente.first).at(siguiente.second)) || sol)){
-			visitados.visitado[siguiente.first][siguiente.second] = true;
-			visitados.cantidad++;
-			sol = backTracking(solucion,siguiente, visitados);
-		}
-}
-
-
-
 
 void encontrarRecorrido(list<pair<int,int>> & solucion){
 
@@ -81,9 +51,16 @@ void encontrarRecorrido(list<pair<int,int>> & solucion){
 		{false,false,false,false,false,false}
 	};
 
-	backTracking(solucion,pair<int,int>(0,0),visitados);
+	vector<pair<int,int>> movimientos = {
+		make_pair(1,0),
+		make_pair(-1,0),
+		make_pair(0,1),
+		make_pair(0,-1),
+	};
 
-	vector<vector<int>> sol ={
+	backTracking(solucion,movimientos, pair<int,int>(0,0),visitados);
+
+	/*vector<vector<int>> sol ={
 		{0,0,0,0,0,0},
 		{0,0,0,0,0,0},
 		{0,0,0,0,0,0},
@@ -92,11 +69,7 @@ void encontrarRecorrido(list<pair<int,int>> & solucion){
 		{0,0,0,0,0,0}
 	};
 
-	/*for (list<pair<int,int>>::const_iterator it = solucion.begin(); it < solucion.size(); it++){
-
-	}*/
-
-	/*cout<<solucion.size();
+	cout<<solucion.size();
 	int i = 0;
 	for(list<pair<int,int>>::const_iterator it = solucion.begin(); it != solucion.end(); it++){
 		sol[it->first][it->second] = i++;
