@@ -32,8 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="src/include/headers/set-covering.h" />
-		<Unit filename="src/include/set-covering.cpp" />
+		<Unit filename="src/include/headers/set-covering_empresa.h" />
+		<Unit filename="src/include/headers/set-covering_llaves.h" />
+		<Unit filename="src/include/set-covering_empresa.cpp" />
+		<Unit filename="src/include/set-covering_llaves.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

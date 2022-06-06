@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "headers/set-covering.h"
+#include "headers/set-covering_llaves.h"
 
 using namespace std;
 
@@ -30,6 +30,8 @@ void devolverLlaves(Solucion & solucion){
 	Solucion Actual;
 	Actual.cant_llaves = 0;
 	Actual.solucion = {0,0,0,0};
+
+	solucion.cant_llaves = INT_MAX; //serializo la solucion para evitar errores
 
 	vector<vector<int>> tablero = {
 		{1,0,1,1},
