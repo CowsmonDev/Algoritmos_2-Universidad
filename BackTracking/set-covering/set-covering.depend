@@ -11,3 +11,26 @@
 	<iostream>
 	"include/headers/set-covering.h"
 
+1654284058 source:c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\backtracking\set-covering\src\include\set-covering_llaves.cpp
+	<iostream>
+	"headers/set-covering_llaves.h"
+
+1654281349 c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\backtracking\set-covering\src\include\headers\set-covering_llaves.h
+	<set>
+	<vector>
+
+1654549919 source:c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\backtracking\set-covering\src\include\set-covering_empresa.cpp
+	<iostream>
+	"headers/set-covering_empresa.h"
+	<set>
+	<vector>
+
+1654549878 c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\backtracking\set-covering\src\include\headers\set-covering_empresa.h
+	<list>
+	<utility>
+
+1654284678 source:c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\backtracking\set-covering\src\main.cpp
+	<iostream>
+	"include/headers/set-covering_llaves.h"
+	"include/headers/set-covering_empresa.h"
+
