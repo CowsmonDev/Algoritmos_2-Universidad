@@ -12,7 +12,7 @@ bool poda(set<string> habilidades, string lenguaje, int cantidadActual, int cant
 	return true;
 }
 		/*el par controla si la persona ya fue requerida*/
-void setCovering(vector<pair<bool,set<string>>> & tablero, list<string> lenguaje, SolucionEmpresa Actual, SolucionEmpresa & solucion){
+void setCovering(vector<pair<bool,set<string>>> & tablero, list<string> lenguaje, SolucionEmpresas Actual, SolucionEmpresas & solucion){
 	if (lenguaje.empty())
 		solucion = Actual;
 	else{
@@ -39,8 +39,8 @@ void setCovering(vector<pair<bool,set<string>>> & tablero, list<string> lenguaje
 	}
 }
 
-void devolverEmpleados(SolucionEmpresa & solucion){
-	SolucionEmpresa Actual;
+void devolverEmpleados(SolucionEmpresas & solucion){
+	SolucionEmpresas Actual;
 	Actual.cantidad_empleados = 0;
 
 	solucion.cantidad_empleados = INT_MAX; //serializo la solucion para evitar errores

@@ -3,12 +3,13 @@
 
 #include <list>
 #include <utility>
-struct SolucionEmpresa{
+#include <iostream>
+struct SolucionEmpresas{
 	int cantidad_empleados;
 	//std::map<std::string,int> solucion;
 	std::list<std::pair<std::string, int>> solucion;
 };
 
-void devolverEmpleados(SolucionEmpresa & solucion);
+void devolverEmpleados(SolucionEmpresas & solucion);
 
 #endif
