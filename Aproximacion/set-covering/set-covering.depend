@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1654632630 source:c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\aproximacion\set-covering\src\include\set-covering.cpp
+	"headers/set-covering.h"
+	"headers/Empleados.h"
+
+1654632377 c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\aproximacion\set-covering\src\include\headers\set-covering.h
+	<iostream>
+	<utility>
+	<list>
+
+1654632108 source:c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\aproximacion\set-covering\src\main.cpp
+	<iostream>
+	"include/headers/set-covering.h"
+	<vector>
+	<set>
+	<algorithm>
+
+1654633314 c:\users\agust\onedrive\escuela\ayda2\backtracking\practica\algoritmos-universidad\aproximacion\set-covering\src\include\headers\empleados.h
+	<list>
+	<vector>
+	<set>
+	<iostream>
+
+1654883043 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\set-covering\src\include\set-covering.cpp
+	"headers/set-covering.h"
+
+1654882848 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\set-covering\src\include\headers\set-covering.h
+	<iostream>
+	<utility>
+	<list>
+	"Empleado.h"
+
+1654883288 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\set-covering\src\include\headers\empleado.h
+	<list>
+	<vector>
+	<set>
+	<iostream>
+	<algorithm>
+	<string>
+
+1654883088 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\set-covering\src\main.cpp
+	<iostream>
+	"include/headers/set-covering.h"
+	<vector>
+	<set>
+	<algorithm>
+

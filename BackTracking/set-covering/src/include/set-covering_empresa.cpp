@@ -18,22 +18,19 @@ void setCovering(vector<pair<bool,set<string>>> & tablero, list<string> lenguaje
 	else{
 		string lenguajeActual = lenguaje.front(); lenguaje.pop_front();
 
-		bool bandera = false;
 		for(int i = 0; i < tablero.size(); i++){
+			bool bandera = false;
 			if(!poda(tablero.at(i).second, lenguajeActual, Actual.cantidad_empleados, solucion.cantidad_empleados)){
 				if(!tablero.at(i).first){
 					Actual.cantidad_empleados++;
-					tablero[i].first = true;
+					Actual.solucion.push_back({lenguajeActual,i});
 					bandera = true;
 				}
-				Actual.solucion.push_back({lenguajeActual,i});
 				setCovering(tablero,lenguaje,Actual,solucion);
 				if(bandera){
 					Actual.cantidad_empleados--;
-					tablero[i].first = false;
+					Actual.solucion.pop_back();
 				}
-				Actual.solucion.pop_back();
-				bandera = false;
 			}
 		}
 	}
