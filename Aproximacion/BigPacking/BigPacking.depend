@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1654983963 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\include\first-fit.cpp
+	"headers/first-fit.h"
+
+1654980415 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\include\headers\first-fit.h
+	"objetos.h"
+	<list>
+
+1654981363 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\include\headers\objetos.h
+	<iostream>
+
+1654980394 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\main.cpp
+	<iostream>
+	"include/headers/first-fit.h"
+
