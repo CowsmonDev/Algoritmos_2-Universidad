@@ -6,10 +6,17 @@
 	"objetos.h"
 	<list>
 
-1654981363 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\include\headers\objetos.h
+1655053130 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\include\headers\objetos.h
 	<iostream>
 
-1654980394 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\main.cpp
+1655055065 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\main.cpp
 	<iostream>
-	"include/headers/first-fit.h"
+	"include/headers/devolver_cajones.h"
+
+1655054670 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\include\headers\devolver_cajones.h
+	"objetos.h"
+	<list>
+
+1655053905 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\bigpacking\src\include\devolver_cajones.cpp
+	"headers/devolver_cajones.h"
 

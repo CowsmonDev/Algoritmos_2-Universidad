@@ -13,10 +13,16 @@ class Objeto{
 			this->size = size;
 		};
 
+		bool operator<(Objeto & other){
+			return (this->size < other.size);
+		};
+		string toString() const{ return "Nombre: " + this->nombre + " Capacidad: " + std::to_string(this->size); }
+
+
 		string getNombre(){ return this->nombre; }
 		float getSize(){ return this->size; }
 
-	private: 
+	private:
 		string nombre;
 		float size;
 };

@@ -32,7 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="src/include/first-fit.cpp" />
+		<Unit filename="src/include/headers/first-fit.h" />
+		<Unit filename="src/include/headers/objetos.h" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
