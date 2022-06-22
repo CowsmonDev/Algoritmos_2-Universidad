@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1655932612 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\mochila\src\include\mochila.cpp
+	"headers/mochila.h"
+
+1655932941 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\mochila\src\include\headers\mochila.h
+	<list>
+	<set>
+	<iostream>
+	<algorithm>
+
+1655932653 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\mochila\src\main.cpp
+	<iostream>
+	"include/headers/mochila.h"
+
