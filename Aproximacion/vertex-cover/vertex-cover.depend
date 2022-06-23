@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1655071123 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\vertex-cover\src\include\vertex_cover.cpp
+
+1655073315 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\vertex-cover\src\main.cpp
+	<iostream>
+	"include/headers/Grafo.h"
+
+1655073555 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\aproximacion\vertex-cover\src\include\headers\grafo.h
+	<map>
+	<set>
+	<list>
+
