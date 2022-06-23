@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="BigPacking" />
+		<Option title="vertex-cover" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/BigPacking" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/vertex-cover" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/BigPacking" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/vertex-cover" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -32,9 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="src/include/devolver_cajones.cpp" />
-		<Unit filename="src/include/headers/devolver_cajones.h" />
-		<Unit filename="src/include/headers/objetos.h" />
+		<Unit filename="src/include/headers/Grafo.h" />
+		<Unit filename="src/include/headers/vertex_cover.h" />
+		<Unit filename="src/include/vertex_cover.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
