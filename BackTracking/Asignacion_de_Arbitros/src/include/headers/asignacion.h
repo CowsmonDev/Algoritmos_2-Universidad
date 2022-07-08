@@ -8,8 +8,6 @@ class Partido{
 		Partido(int Equipo_1, int Equipo_2);
 		int equipo_1;
 		int equipo_2;
-
-
 };
 
 struct Solucion{

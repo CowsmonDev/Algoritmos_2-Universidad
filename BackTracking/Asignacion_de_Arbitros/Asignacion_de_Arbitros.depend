@@ -53,3 +53,18 @@
 	<time.h>
 	<algorithm>
 
+1657306819 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\backtracking\asignacion_de_arbitros\src\main.cpp
+	<iostream>
+	<vector>
+	"include/headers/asignacion.h"
+
+1657307235 c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\backtracking\asignacion_de_arbitros\src\include\headers\asignacion.h
+	<vector>
+
+1657307273 source:c:\users\agust\onedrive\escuela\ayda2\laboratorio\algoritmos-universidad\backtracking\asignacion_de_arbitros\src\include\asignacion.cpp
+	"headers/asignacion.h"
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	<algorithm>
+
