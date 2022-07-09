@@ -8,7 +8,7 @@ int main()
 {
 
     Solucion solucion;
-    solucion.puntaje = 0;
+    solucion.puntajeTotal = 0;
 
     encontrarArbitroOptimo(solucion);
 

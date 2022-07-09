@@ -1,82 +1,75 @@
 #include "headers/asignacion.h"
-#include <iostream>
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
-#include <algorithm>    // std::generate
 
 using namespace std;
 
-Partido::Partido(int Equipo_1, int Equipo_2){
-	equipo_1 = Equipo_1;
-	equipo_2 = Equipo_2;
-}
+void cargarPartidos(list<pair<Equipo,Equipo>> & partidos){
+	int equipo1, equipo2, i = 0, cantidadPartidos = 0;
 
-void llenar_tablero_partidos(vector<Partido> & partidos, int cantidad_partidos){
-	int equipo_1, equipo_2;
+	cout<<"Cantidad De Partidos: ";
+	cin>>cantidadPartidos;
+	while(i < (cantidadPartidos * 2)){
+		cout<<"Ingrese el Equipo 1: ";
+		cin>>equipo1;
 
-	for (int i = 0; i < cantidad_partidos; i++){
-		cout<<endl<<"Equipo 1: ";
-		cin>>equipo_1;
-		cout<<"Equipo 2: ";
-		cin>>equipo_2;
-		cout<<endl;
-		partidos.push_back(Partido(equipo_1, equipo_2));
+		cout<<"Ingrese el Equipo 2: ";
+		cin>>equipo2;
+
+		partidos.push_back({Equipo(i, equipo1), Equipo(i + 1, equipo2)});
+		i+=2;
 	}
 }
 
-void backTrancking(vector<vector<int>> tablero, vector<Partido> partidos, int nro_partido, Solucion & Actual, Solucion & solucion){
-	if(partidos.size() <= nro_partido){
-		if(Actual.puntaje > solucion.puntaje){
+void backTracking(list<Arbitro> & arbitros, list<pair<Equipo,Equipo>> partidos, Solucion Actual, Solucion & solucion){
+	if(partidos.empty()){
+		if(Actual.puntajeTotal > solucion.puntajeTotal){
 			solucion = Actual;
 		}
 	}else{
-		for(int arbitro = 0; arbitro < tablero.size(); arbitro++){
-			//agregar un set de visitado...
-			if(Actual.arbitros[nro_partido] == -1){//sentencia innecesaria
-				Actual.arbitros[nro_partido] = arbitro;
-				cout<<tablero.at(tablero).size()<<endl;
-				Actual.puntaje += tablero.at(arbitro).at(partidos.at(nro_partido).equipo_1) + tablero.at(arbitro).at(partidos.at(nro_partido).equipo_2);
+		pair<Equipo,Equipo> p = { partidos.front().first, partidos.front().second };
+		partidos.pop_front();
+		for(list<Arbitro>::iterator it = arbitros.begin(); it != arbitros.end(); it++){
+			if(!it->getSeleccionado()){
+				Actual.arbitros.push_back(it->getArbitro());
+				Actual.puntajeTotal += it->getPuntaje(p.first.getId()) + it->getPuntaje(p.second.getId());
+				it->setSeleccionado(true);
 
-				backTrancking(tablero, partidos, nro_partido + 1, Actual, solucion);
+				backTracking(arbitros, partidos, Actual, solucion);
 
-				Actual.arbitros[nro_partido] = -1;
-				Actual.puntaje -= tablero.at(arbitro).at(partidos.at(nro_partido).equipo_1) + tablero.at(arbitro).at(partidos.at(nro_partido).equipo_2);
+				Actual.arbitros.pop_back();
+				Actual.puntajeTotal -= it->getPuntaje(p.first.getId()) + it->getPuntaje(p.second.getId());
+				it->setSeleccionado(false);
 			}
 		}
 	}
 }
 
-int ran(){ return rand() % 10; }
-
 void encontrarArbitroOptimo(Solucion & solucion){
 
-	int cantidad_partidos, cantidad_arbitros = 0;
+	Solucion Actual;
+	Actual.puntajeTotal = 0;
+	Actual.arbitros = {};
 
-	cout<<"Cantidad De Partidos: ";
-	cin>> cantidad_partidos;
-	cout<<"Cantidad De Arbitros: ";
-	cin>> cantidad_arbitros;
-	while(cantidad_partidos > cantidad_arbitros){
-		cout<<"La Cantidad debe ser igual o mayor que la cantidad de partidos"<<endl;
-		cin>> cantidad_arbitros;
-	}
+	list<pair<Equipo, Equipo>> partidos;
 
-	/** Inicializa el vector partido y lo llena con la disposicion solicitada por el usuarioz **/
-	vector<Partido> partidos;
-	llenar_tablero_partidos(partidos, cantidad_partidos);
+	cargarPartidos(partidos);
 
 	srand(time(0));
-	vector<vector<int>> tablero(cantidad_arbitros,vector<int>(cantidad_partidos*2)); //inicializa el vector tablero sin valores y con ciertas dimensiones
 
-	/** Genera numeros Aleatorios para el tablero de puntajes **/
-	for(vector<vector<int>>::iterator it = tablero.begin(); it != tablero.end(); it++)
-		generate(it->begin(), it->end(), ran);
+	list<Arbitro> arbitros = {
+		Arbitro(0, partidos.size() * 2),
+		Arbitro(1, partidos.size() * 2),
+		Arbitro(2, partidos.size() * 2),
+	};
 
-	Solucion Actual;
-	Actual.arbitros = vector<int>(cantidad_partidos, -1);
-	Actual.puntaje = 0;
+	cout<<endl<<"----------------------------------- Puntajes --------------------------------"<<endl;
+	for(list<Arbitro>::iterator it = arbitros.begin(); it != arbitros.end(); it++){
+		cout<<it->toString()<<endl;
+	}
+	cout<<"-----------------------------------==========--------------------------------"<<endl<<endl;
 
-	backTrancking(tablero, partidos, 0, Actual, solucion);
-	cout<<solucion.puntaje<<endl;
+	backTracking(arbitros, partidos, Actual, solucion);
 
+	cout<<"Arbitros: ";
+	for(list<int>::const_iterator it = solucion.arbitros.begin(); it != solucion.arbitros.end(); it++){ cout<<*it<<" "; }
+	cout<<endl<<"Putaje Total: "<<solucion.puntajeTotal<<endl;
 }
